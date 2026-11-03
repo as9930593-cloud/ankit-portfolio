@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Ankit's personal developer portfolio, coding journey and projects.">
+<meta name="theme-color" content="#080f1e">
+
+<title>Ankit | Developer Portfolio</title>
+
+<style>
+:root {
+    --cyan: #00eaff;
+    --blue: #008cff;
+    --purple: #a855f7;
+    --dark: #080f1e;
+    --card: rgba(15, 31, 56, 0.88);
+    --muted: #bdcce0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        -45deg,
+        #080f1e,
+        #102b55,
+        #301052,
+        #061b36
+    );
+    background-size: 400% 400%;
+    animation: movingBackground 14s ease infinite;
+}
+
+@keyframes movingBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 17px 15px;
+    text-align: center;
+    background: rgba(5, 13, 28, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 234, 255, 0.45);
+}
+
+header h2 {
+    color: var(--cyan);
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 17px;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+section {
+    padding: 75px 16px;
+    text-align: center;
+    scroll-margin-top: 115px;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3D CODING LOGO */
+
+.logo-3d {
+    width: 145px;
+    height: 145px;
+    margin: 0 auto 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle, #173b70, #080f1e 72%);
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.55);
+}
+
+.logo-3d span {
+    color: var(--cyan);
+    font-size: 38px;
+    font-weight: bold;
+    text-shadow: 0 0 18px var(--cyan);
+    z-index: 2;
+}
+
+.logo-3d::before,
+.logo-3d::after {
+    content: "";
+    position: absolute;
+    width: 165px;
+    height: 65px;
+    border: 2px solid var(--cyan);
+    border-radius: 50%;
+    animation: orbit 4s linear infinite;
+}
+
+.logo-3d::after {
+    border-color: var(--purple);
+    animation-duration: 6s;
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* HERO BANNER */
+
+.banner {
+    width: 95%;
+    max-width: 650px;
+    min-height: 300px;
+    padding: 35px 15px;
+    margin: 20px auto 40px;
+    border: 1px solid var(--cyan);
+    border-radius: 25px;
+    background: linear-gradient(135deg, #07152f, #17245c, #320b50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: glow 2.5s infinite alternate, float 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px var(--cyan); }
+    to { box-shadow: 0 0 35px var(--purple); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.banner h2 {
+    color: var(--cyan);
+    font-size: clamp(38px, 9vw, 55px);
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    color: white;
+    letter-spacing: 2px;
+}
+
+.banner .tag {
+    color: var(--cyan);
+    margin-top: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* TYPING EFFECT */
+
+.typing {
+    display: inline-block;
+    color: var(--cyan);
+    font-weight: bold;
+    border-right: 2px solid var(--cyan);
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    animation: typing 4s steps(27) infinite alternate,
+               blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 27ch; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+h1 {
+    color: var(--cyan);
+    font-size: clamp(30px, 7vw, 46px);
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--cyan);
+    margin-bottom: 18px;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.hero > p {
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--cyan);
+    color: #07111f;
+    padding: 14px 27px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 24px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px var(--cyan);
+}
+
+.section-title {
+    font-size: 29px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.section-subtitle {
+    max-width: 650px;
+    margin: -20px auto 30px;
+}
+
+/* CARDS */
+
+.card {
+    width: 100%;
+    max-width: 570px;
+    margin: 20px auto;
+    padding: 28px 22px;
+    border-radius: 18px;
+    border: 1px solid #263d5c;
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 22px rgba(0, 217, 255, 0.22);
+}
+
+.card h3 {
+    color: var(--cyan);
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+/* SKILLS */
+
+.skills-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.skill {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 8px;
+    border: 1px solid #075b7b;
+    border-radius: 22px;
+    background: #092e4a;
+    color: var(--cyan);
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background: var(--cyan);
+    color: #07111f;
+    transform: scale(1.06);
+}
+
+/* PROJECTS */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.project-card {
+    width: 100%;
+    margin: 0;
+}
+
+.project-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+/* JOURNEY */
+
+.journey-item {
+    max-width: 570px;
+    margin: 15px auto;
+    padding: 18px;
+    border-left: 3px solid var(--cyan);
+    border-radius: 10px;
+    background: var(--card);
+    text-align: left;
+}
+
+.journey-item h3 {
+    color: var(--cyan);
+    margin-bottom: 8px;
+}
+
+/* CONTACT */
+
+.contact-card {
+    max-width: 570px;
+}
+
+.contact-note {
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 15px;
+    text-align: center;
+    background: rgba(5, 13, 28, 0.95);
+    border-top: 1px solid #183b5b;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+/* BACK TO TOP */
+
+#topButton {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: var(--cyan);
+    color: #07111f;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--cyan);
+    z-index: 99;
+    display: none;
+}
+
+#topButton.show {
+    display: block;
+}
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 60px 13px;
+    }
+
+    .hero {
+        min-height: 590px;
+    }
+
+    .banner {
+        min-height: 270px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <h2>ANKIT</h2>
+    <p>MY PERSONAL DEVELOPER PORTFOLIO</p>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="banner">
+
+        <div class="logo-3d">
+            <span>&lt;/&gt;</span>
+        </div>
+
+        <h2>ANKIT</h2>
+        <p>WELCOME TO MY DIGITAL WORLD</p>
+        <div class="tag">⚡ FUTURE SOFTWARE DEVELOPER</div>
+
+    </div>
+
+    <h1>HELLO, I'M ANKIT</h1>
+
+    <p>Student | Tech Lover | Future Developer</p>
+
+    <p style="margin-top:15px;">
+        I am a <span class="typing">Future Software Developer</span>
+    </p>
+
+    <a href="#about" class="btn">EXPLORE MY WORLD ↓</a>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="reveal">
+
+    <h2 class="section-title">ABOUT ME</h2>
+
+    <div class="card">
+        <p>
+            Hello! My name is Ankit.
+            I am a student and an aspiring Software Developer.
+            I am learning HTML, CSS, Python and C++.
+            I enjoy technology, coding and creating new ideas.
+            My goal is to become a professional software developer
+            and build useful digital products.
+        </p>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="reveal">
+
+    <h2 class="section-title">MY SKILLS</h2>
+
+    <p class="section-subtitle">
+        Technologies and skills I am learning and exploring.
+    </p>
+
+    <div class="card skills-container">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Python</span>
+        <span class="skill">C++</span>
+        <span class="skill">Web Design</span>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Creative Thinking</span>
+    </div>
+
+</section>
+
+<!-- LEARNING JOURNEY -->
+
+<section id="journey" class="reveal">
+
+    <h2 class="section-title">MY LEARNING JOURNEY</h2>
+
+    <div class="journey-item">
+        <h3>📚 Student Life</h3>
+        <p>
+            Learning new concepts and building a strong foundation
+            for my future.
+        </p>
+    </div>
+
+    <div class="journey-item">
+        <h3>💻 Programming</h3>
+        <p>
+            Exploring programming through HTML, CSS, Python and C++.
+        </p>
+    </div>
+
+    <div class="journey-item">
+        <h3>🚀 Future Goal</h3>
+        <p>
+            Improving my coding skills and creating meaningful projects.
+        </p>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="reveal">
+
+    <h2 class="section-title">MY PROJECTS</h2>
+
+    <p class="section-subtitle">
+        Ideas and projects from my learning journey.
+    </p>
+
+    <div class="projects-container">
+
+        <div class="card project-card">
+            <div class="project-icon">🌐</div>
+            <h3>Personal Portfolio</h3>
+            <p>
+                My personal website to showcase my skills,
+                projects and learning journey.
+            </p>
+        </div>
+
+     <div class="card project-card">
+    <div class="project-icon">🎮</div>
+    <h3>Upcoming Game</h3>
+    <p>
+        A new and exciting game is planned.
+        Game development coming soon!
+    </p>
+    <span class="status">COMING SOON</span>
+</div>
+
+        <div class="card project-card">
+            <div class="project-icon">💡</div>
+            <h3>Future Projects</h3>
+            <p>
+                More creative ideas and useful digital
+                projects are coming soon.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GOALS -->
+
+<section id="goals" class="reveal">
+
+    <h2 class="section-title">MY FUTURE GOALS</h2>
+
+    <div class="card">
+        <h3>🎯 Keep Learning</h3>
+        <p>
+            Learn programming, improve problem-solving
+            and explore new technologies.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🌍 Build Useful Products</h3>
+        <p>
+            Create digital solutions that can help
+            people in their everyday lives.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>💻 Become a Software Developer</h3>
+        <p>
+            Turn my interest in technology into
+            a professional career.
+        </p>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="reveal">
+
+    <h2 class="section-title">CONTACT ME</h2>
+
+    <div class="card contact-card">
+
+        <div class="project-icon">✉️</div>
+
+        <h3>Let's Connect</h3>
+
+        <p>
+            Have an idea or want to discuss technology?
+            You can contact me through email.
+        </p>
+
+        <!-- Replace YOUR_EMAIL with your real email address -->
+        <a class="btn"
+           href="mailto:as9930593@gmail.com">
+           SEND EMAIL
+           <p>as9930593@gmail.com</p>
+        </a>
+
+        <p class="contact-note">
+            Replace the sample email address in the code
+            before publishing your website.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <h3 style="color:#00eaff; margin-bottom:10px;">ANKIT</h3>
+
+    <p>Learning Today | Building Tomorrow</p>
+
+    <p style="margin-top:12px;">
+        © 2026 ANKIT | All Rights Reserved
+    </p>
+
+    <p>Designed with ❤️ by Ankit</p>
+</footer>
+
+<!-- BACK TO TOP -->
+
+<button id="topButton"
+        aria-label="Back to top"
+        onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    ↑
+</button>
+
+<!-- JAVASCRIPT -->
+
+<script>
+const topButton = document.getElementById("topButton");
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+        topButton.classList.add("show");
+    } else {
+        topButton.classList.remove("show");
+    }
+});
+
+/* Scroll reveal animation */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver(function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(function(element) {
+        observer.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(function(element) {
+        element.classList.add("visible");
+    });
+
+}
+</script>
+
+</body>
+</html>
